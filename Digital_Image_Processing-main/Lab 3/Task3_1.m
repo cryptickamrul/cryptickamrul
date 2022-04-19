@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+warning off;
+a = imread('2.jpg');
+%a = imread('Cameraman.tif');
+a=rgb2gray(a);
+a = im2double(a);
+a = imnoise(a,'salt & pepper',0.02);
+I = medfilt2(a);
+montage({a, I}, 'Size', [1 2]);
+title('Image with Salt & Pepper noise                   Median filtered Image');

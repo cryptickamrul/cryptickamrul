@@ -1,0 +1,11 @@
+im = imread('2.jpg');
+im_d = im2double(im);
+im = rgb2gray(im_d);
+hx = [+1 0; 0 -1];
+hy = [0 +1; -1 0];
+Gx = imfilter(im, hx);
+imshow(Gx); figure;
+Gy = imfilter(im, hy);
+imshow(Gy); figure;
+Gm = sqrt(Gx.^2 + Gy.^2);
+imshow(Gm);

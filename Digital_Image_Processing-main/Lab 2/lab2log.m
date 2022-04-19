@@ -1,0 +1,9 @@
+I=imread('cameraman.tif');
+I1=double(I)/255;
+c=1;
+I2=c*log(1+(I1));
+figure,
+subplot(121),
+imshow(I);
+subplot(122),
+imshow(I2);  
